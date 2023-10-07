@@ -1,0 +1,9 @@
+# Jetbrains
+.idea
+
+# Dependencies
+node_modules/
+
+# Building app
+.cache/
+dist/
