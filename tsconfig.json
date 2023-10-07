@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "es2015",
+      "dom"
+    ],
+    /* Enable all strict type-checking options */
+    "strict": true,
+    /* Specify JSX code generation */
+    "jsx": "react",
+    /*  Emit interop between CommonJS and ES modules */
+    "esModuleInterop": true
+  },
+  "include": [
+    "src/**/*"
+  ]
+}

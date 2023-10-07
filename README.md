@@ -23,6 +23,11 @@ In brief, for a minimal setup with React, JS and Parcel, we need to
 install `@babel/preset-env`, `@babel/preset-react`, `parcel-bundler` and create an HTML file (`index.html`) file
 sourcing an entry file (`src/index.js`), itself rendering the React component implemented in `src/App.js`.
 
+- [Replace JS with TS](https://adrianhall.github.io/javascript/react/2020/03/29/parcel-typescript-react/)
+
+In brief, we need to add dependencies `typescript`, `@types/react`, `@types/react-dom`, as well as a `tsconfig.json`
+file, and update the `js` extensions to `tsx` extensions.
+
 
 
 
