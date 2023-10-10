@@ -151,3 +151,21 @@ Given that _the order of state values is inferred based on the order of hook cal
 the same order of hook calls at every re-render, but **this is a simplification**: if two distinct hooks can be used to
 set the same state object, then there is no problem.
 
+### Experiment 2 (with Laurent): Define React `useState`'s initial values in parent component
+
+_Observations:_
+
+- At first render:
+    - Child component receives value `initValue` from parent component
+    - Value `initValue` is used to initialise the state
+    - The value displayed in the child component is `initValue`
+- At second render (after the initial value is updated in the parent component, following click on button):
+    - Child component receives new value `newInitValue` from parent component
+    - Since the state has already been initialised, this new value is not used
+    - As a consequence, the value displayed in the child component remains `initValue`
+
+_Conclusion:_
+
+If an initial value comes from a parent component and is modified after the first render of the application, it is not
+used => using this pattern is pointless.
+
