@@ -10,19 +10,19 @@ const App = () => (
     <h1>React playground</h1>
     <Box title="Experiment 1: Understand the internals of hooks (array in the global state => order matters)">
       <Box
-        title="Case 1: Why the 'order of hooks' rule matters 🤯"
+        title="Case A: Why the 'order of hooks' rule matters 🤯"
         level="case"
       >
         <OrderOfHooks />
       </Box>
       <Box
-        title="Case 2: Why using a custom hook to select different hooks at re-renders *may* be a problem (⚠️ Not realistic)"
+        title="Case B: Why using a custom hook to select different hooks at re-renders *may* be a problem (⚠️ Not realistic)"
         level="case"
       >
         <OrderOfHooksWithHookSelection />
       </Box>
       <Box
-        title="Case 3: Why using a custom hook to select different hooks at re-renders *should not* be a problem (✅ Realistic)"
+        title="Case C: Why using a custom hook to select different hooks at re-renders *should not* be a problem (✅ Realistic)"
         level="case"
       >
         <OrderOfHooksWithHookSelectionAndInputtedValue />

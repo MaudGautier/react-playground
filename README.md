@@ -1,6 +1,6 @@
 # Playground for React
 
-This project is a small playground for me to experiment a bit.
+This project is a small playground for me to experiment and better understand the internals of React.
 
 ## Getting started
 
@@ -14,9 +14,9 @@ npm run start
 # Go to http://localhost:1234 in your web browser
 ```
 
-### References
+## How to set up a minimal playground with React, JS and Parcel
 
-Create a minimal setup:
+References to set up the minimal project:
 
 - [Getting started with a minimal project (React, JS, Parcel)](https://levelup.gitconnected.com/how-to-create-a-minimal-react-and-parcel-app-in-5-steps-2806fa09a371)
 - [With React 18, use `createRoot` instead of ReactDOM.render which is not supported anymore](https://react.dev/blog/2022/03/08/react-18-upgrade-guide#updates-to-client-rendering-apis)
@@ -32,9 +32,13 @@ file, and update the `js` extensions to `tsx` extensions.
 
 ## Experiments
 
-### React hooks order
+### Experiment 1: Understand the internals of React hooks (and why their order matters)
 
-#### Case 1: Why the order of hooks rule matters (`experiments/OrderOfHooks.tsx`)
+This set of experiments allows to understand the internals of React hooks.
+In particular, these shed light on the fact that hooks are stored as an array in the global state, which is why the
+order in which they are called at each render must stay the same.
+
+#### Case A: Why the order of hooks rule matters (`experiments/OrderOfHooks.tsx`)
 
 _What happens:_
 
@@ -98,7 +102,7 @@ collision that this approach implies), along with many other design solutions.
 As a result, **the React team opted for storing the global state in an array, which is imperfect because it relies on
 the order of calls, but is the least imperfect solution to the problem**._
 
-#### Case 2: Why using a custom hook selecting different hooks at different re-renders may be a problem (`experiments/OrderOfHooksWithHookSelection.tsx`)
+#### Case B: Why using a custom hook selecting different hooks at different re-renders may be a problem (`experiments/OrderOfHooksWithHookSelection.tsx`)
 
 _⚠️ This situation is unrealistic in the real world: the implementation was just intended to uncover what kinds fo
 problems
@@ -121,7 +125,7 @@ _**NB:**
 This implementation was intended to show how it can be a problem, but it's something that probably no one would
 ever do (it doesn't make much sense to decide what the new value is going to be in the custom hook)._
 
-#### Case 3: Why using a custom hook selecting different hooks at different re-renders may not be a problem (`experiments/OrderOfHooksWithHookSelectionAndInputtedValue.tsx`)
+#### Case C: Why using a custom hook selecting different hooks at different re-renders may not be a problem (`experiments/OrderOfHooksWithHookSelectionAndInputtedValue.tsx`)
 
 _What happens:_
 
